@@ -21,7 +21,7 @@ fs.createReadStream(FILENAME_IN)
 	rows.push(row);
 })
 .on('end', function() {
-     rows.slice(0, 3).forEach(function(row) {
+     rows.forEach(function(row) {
           // Increment # of pending requests
           pending++;
           
@@ -65,7 +65,7 @@ var checkPending = function() {
           } else {
                console.log('No errors');
           }
-          //var outFile = fs.createWriteStream(FILENAME_OUT);
-          //csv.write(rows, {headers: true}).pipe(outFile);
+          var outFile = fs.createWriteStream(FILENAME_OUT);
+          csv.write(rows, {headers: true}).pipe(outFile);
      }
 }

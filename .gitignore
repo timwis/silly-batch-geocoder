@@ -1,3 +1,4 @@
 node_modules
 jos_pollingplaces.csv
 geocoded_incl_approx.csv
+geocoded.csv
